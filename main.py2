@@ -1,0 +1,19 @@
+from fastapi import FastAPI
+
+app = FastAPI()
+
+# 🔹 Test route
+@app.get("/")
+def home():
+    return {"status": "running"}
+
+# 🔹 Signal route (TEST VERSION - NO API)
+@app.get("/signal")
+def signal():
+    return {
+        "valid": True,
+        "bias": "BUY",
+        "entry": 1.0820,
+        "sl": 1.0800,
+        "tp": 1.0860
+    }
